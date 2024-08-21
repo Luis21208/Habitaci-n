@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <title> informacio</title>
+    <style>
+    *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Times New Roman", Times, serif;
+    }
+    </style>
+</head>
+<body style="background-color:#6288D9;">
+    <div class="w3-sidebar w3-bar-block w3-card w3-animate-left" style="display:none;z-index:5; background-color:#53A6D0; font-size:169%" id="mySidebar">
+        <button class="w3-bar-item w3-button w3-xxlarge"
+        onclick="w3_close()" style="color:white;">Tancar ×</button>
+        <hr>
+        <a href="Informacio.html" class="w3-bar-item w3-button w3-hover-light-blue" style="color:white;"><b>Informació</b></a>
+        <hr>
+        <a href="Grafica_T.html" class="w3-bar-item w3-button w3-hover-light-blue" style="color:white;"><b>Gràfica Temperatura</b></a>  
+        <hr>       
+        <a href="Grafica_H.html" class="w3-bar-item w3-button w3-hover-light-blue" style="color:white;"><b>Gràfica Humitat</b></a>
+        <hr>
+        <button class="w3-button w3-block w3-left-align w3-hover-light-blue" style="color:white;"onclick="myAccFunc()">
+        <b>Termòstat</b> <i class="fa fa-caret-down"></i>
+        </button>
+        <div id="demoAcc" class="w3-hide w3-white" style="background-color: #53A6D0;">
+            <a href="Control_temp.html" class="w3-bar-item w3-button w3-hover-light-blue" style="background-color: #53A6D0; color: white"><b>Control Temperatura</b></a>
+            <a href="Canviar_sortida.html" class="w3-bar-item w3-button w3-hover-light-blue" style="background-color: #53A6D0; color:white"><b>Canvi de dispositiu</b></a>
+        </div>
+    </div>
+    <div id="main">
+
+        <div class="w3-animate-top w3-card-4" style="background:#6028DB; color: white">
+            <button id="openNav" class="w3-button w3-xxlarge" style="background:#6028DB" onclick="w3_open()">☰ </button>
+            <h1 style="display:inline; position: absolute;">Informació</h1>
+    
+        </div>
+    </div>
+
+            <div>
+                <h2 style="text-align: center; color: white;" ><u>TEM (Termostat conectat a Estació Meteorològica)</u><h2> <h3 style="text-align: justify; color: white; margin-left: 60px; margin-right: 60px;">Aquesta és la nostra pàgina web de TEM. Des d'aquí, podeu consultar la temperatura i el nivell d'humitat ambiental captats pels nostres sensors Arduino. A més a més, podeu ajustar la temperatura fins al valor desitjat gràcies al termòstat i encendre i apagar l'aire condicionat i el calefactor.</h3>
+            </div>
+        <br>
+        <br>
+            <div>
+                <h2 style="text-align: center; color: white;" ><u>Instruccions de la WEB</u><h2> <h3 style="text-align: justify; color: white; margin-left: 60px; margin-right: 60px;">En l'apartat de "Gràfica Temperatura" es pot veure una gràfica de línies que ens mostra la temperatura cada dues hores.</h3>
+               <br> 
+                <h3 style="text-align: justify; color: white; margin-left: 60px; margin-right: 60px;">En l'apartat de "Gràfica Humitat" es pot veure una gràfica en progressió que ens mostra el percentatge d'humitat ambiental.</h3>   
+                <br>
+                <h3 style="text-align: justify; color: white; margin-left: 60px; margin-right: 60px;">En l'apartat de "Termòstat" hi ha dos subapartats:</h3>   
+                <h3 style="text-align: justify; color: white; margin-left: 60px; margin-right: 60px;">- En l'apartat de "Control Temperatura" es pot controlar la temperatura de la casa mitjançant un "slider". Té un interval de 10 a 35 ºC.</h3>   
+                <h3 style="text-align: justify; color: white; margin-left: 60px; margin-right: 60px;">- En l'apartat de "Canvi de dispositiu" es pot apagar i encendre la calefacció i l'aire condicionat mitjançant uns botons.</h3>  
+            </div>
+
+
+        <script>
+            function w3_open() {
+              document.getElementById("main").style.marginLeft = "25%";
+              document.getElementById("mySidebar").style.width = "25%";
+              document.getElementById("mySidebar").style.display = "block";
+              document.getElementById("myOverlay").style.display = "block";
+              document.getElementById("openNav").style.display = 'none'
+            }
+            function w3_close() {
+              document.getElementById("main").style.marginLeft = "0%";
+              document.getElementById("mySidebar").style.display = "none";
+              document.getElementById("myOverlay").style.display = "none";
+              document.getElementById("openNav").style.display = "inline-block";
+            }
+
+            function myAccFunc() {
+            var x = document.getElementById("demoAcc");
+            if (x.className.indexOf("w3-show") == -1) {
+            x.className += " w3-show";
+            x.previousElementSibling.className += " w3-purple";
+            } else { 
+            x.className = x.className.replace(" w3-show", "");
+            x.previousElementSibling.className = 
+            x.previousElementSibling.className.replace(" w3-purple", "");
+            }
+            }
+        </script>
+
+    </body>
+    </html>
